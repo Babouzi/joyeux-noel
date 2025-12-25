@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Joyeux Noël</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #bc4749, #386641);
+      font-family: 'Shantell Sans', cursive;
+      color: #fff;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      max-width: 600px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .signature {
+      margin-top: 2rem;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: #fff;
+      font-size: 1em;
+      user-select: none;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Joyeux Noël</h1>
+
+    <p>
+      Papa, Maman,
+    </p>
+
+    <p>
+      Je voulais profiter de Noël pour vous dire, du fond du cœur, à quel point je vous aime.
+      Merci pour tous les sacrifices que vous avez faits pour moi, souvent sans rien dire,
+      simplement pour que je puisse avancer et construire ma vie.
+    </p>
+
+    <p>
+      Merci pour toute l'attention, la patience et le soutien que vous m'avez donnés dans
+      chaque moment difficile, et tout particulièrement lorsque je suis parti en Inde pour mes études.
+      Même loin, je ne me suis jamais senti seul grâce à vous.
+    </p>
+
+    <p>
+      Vous m'avez donné bien plus que des opportunités : vous m'avez donné des valeurs,
+      de la confiance et tous les outils pour réussir dans la vie.
+      Tout ce que je deviens aujourd'hui, je le dois en grande partie à vous.
+    </p>
+
+    <div class="signature">
+      Avec tout mon amour<br />
+      — Bill
+    </div>
+  </div>
+  <script>
+    const snowCount = 25;
+    for (let i = 0; i < snowCount; i++) {
+      const snow = document.createElement('div');
+      snow.className = 'snowflake';
+      snow.textContent = '❄';
+      snow.style.left = Math.random() * 100 + 'vw';
+      snow.style.animationDuration = 5 + Math.random() * 10 + 's';
+      snow.style.fontSize = 10 + Math.random() * 20 + 'px';
+      snow.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(snow);
+    }
+  </script>
+</body>
+</html>
